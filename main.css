@@ -178,6 +178,14 @@ body {
     font-size: 2em;
 }
 
+.controls {
+    cursor: pointer;
+}
+
+#spellAdd {
+    cursor: pointer;
+}
+
 .controls,
 .subClass {
     width: 100%;
