@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Directory</title>
+    <title>Character Editor</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -17,6 +17,94 @@
     </div>
 
     <!-- Main Content -->
+    <div class="content">
+        <div class="controls">
+            <h3>Submit Character</h3>
+            <h3>Update Existing Character</h3>
+            <h3>Reset Data</h3>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="subClass">
+            <h2>Name:</h2>
+            <input type="text" name="charName" id="charName" placeholder="Character Name">
+        </div>
+
+        <div class="subClass">
+            <h2>Class:</h2>
+            <input type="text" name="class" id="class" placeholder="class">
+            <h2>Race:</h2>
+            <input type="text" name="race" id="race" placeholder="race">
+            <h2>Age:</h2>
+            <input type="number" name="age" id="age" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Armor Class:</h2>
+            <input type="number" name="ac" id="ac" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Intelligence:</h2>
+            <input type="number" name="int" id="int" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Wisdom:</h2>
+            <input type="number" name="wis" id="wis" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Charisma:</h2>
+            <input type="number" name="char" id="char" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Perception:</h2>
+            <input type="number" name="per" id="per" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Investigation:</h2>
+            <input type="number" name="inv" id="inv" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Strength:</h2>
+            <input type="number" name="str" id="str" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Dexterity:</h2>
+            <input type="number" name="dex" id="dex" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Athletics:</h2>
+            <input type="number" name="ath" id="ath" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Acrobatics:</h2>
+            <input type="number" name="acr" id="acr" placeholder="0">
+        </div>
+
+        <div class="subClass">
+            <h2>Description:</h2>
+            <textarea name="desc" id="desc" cols="30" rows="10"
+                placeholder="Describe Character's Appearance..."></textarea>
+        </div>
+
+        <div class="subClass">
+            <h2>Significant Backstory:</h2>
+            <textarea name="backstry" id="backstry" cols="30" rows="10"
+                placeholder="Describe Chatacter's Backstory..."></textarea>
+        </div>
+
+        <h2 id="spellAdd">Add Spell or Abilitiy</h2>
+
+    </div>
 
 
     <script type="module" src="app.js"></script>

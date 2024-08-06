@@ -153,7 +153,7 @@ body {
 
 /* Content styling */
 .content {
-    margin-top: 3em;
+    margin-top: 1em;
     background-color: #2c2c2e;
     color: #f5f5f7;
     display: flex;
@@ -163,11 +163,34 @@ body {
     align-items: center;
     position: relative;
     padding: 20px;
+    border: solid #63297c .4em;
     border-radius: 8px;
     transition: width 0.3s ease;
 }
 
+/* #2c3e50; Dark Blue
+ #34495e; Lighter blue 
+ #63297c Purple */
+
+
 .content a {
     color: #f5f5f7;
     font-size: 2em;
+}
+
+.controls,
+.subClass {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.subClass {
+    width: 80%;
+}
+
+.nameChar {
+    width: 50%;
 }
