@@ -158,6 +158,7 @@ resetButton.onclick = function () {
         document.getElementById("age").value = ""
         document.getElementById("level").value = ""
         document.getElementById("ac").value = ""
+        document.getElementById("hp").value = ""
         document.getElementById("int").value = ""
         document.getElementById("wis").value = ""
         document.getElementById("arcana").value = ""
@@ -186,6 +187,7 @@ subButt.onclick = async function () {
         const age = document.getElementById("age").value
         const level = document.getElementById("level").value
         const ac = document.getElementById("ac").value
+        const hp = document.getElementById("hp").value
         const int = document.getElementById("int").value
         const wis = document.getElementById("wis").value
         const arcana = document.getElementById("arcana").value
@@ -227,6 +229,8 @@ subButt.onclick = async function () {
                 race: race,
                 age: age,
                 level: level,
+                ac: ac,
+                hp: hp,
                 int: int,
                 wis: wis,
                 arcana: arcana,
@@ -251,6 +255,7 @@ subButt.onclick = async function () {
             document.getElementById("age").value = ""
             document.getElementById("level").value = ""
             document.getElementById("ac").value = ""
+            document.getElementById("hp").value = ""
             document.getElementById("int").value = ""
             document.getElementById("wis").value = ""
             document.getElementById("arcana").value = ""
@@ -265,7 +270,7 @@ subButt.onclick = async function () {
             document.getElementById("desc").value = ""
             document.getElementById('coaster').innerHTML = ""
 
-            alert("Ability Submitted");
+            alert("Character Submitted");
         } catch (e) {
             console.error('Error adding document: ', e);
         }
@@ -314,6 +319,7 @@ async function fillCharacterData(charName) {
         document.getElementById("age").value = data.age
         document.getElementById("level").value = data.level
         document.getElementById("ac").value = data.ac
+        document.getElementById("hp").value = data.hp
         document.getElementById("int").value = data.int
         document.getElementById("wis").value = data.wis
         document.getElementById("arcana").value = data.arcana
