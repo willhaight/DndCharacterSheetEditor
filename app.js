@@ -37,8 +37,8 @@ navbar.onclick = function () {
     }
 };
 
-//Spell pick modal
-let grabAbilityButton = document.getElementById('spellAdd')
+// Spell pick modal
+let grabAbilityButton = document.getElementById('spellAdd');
 
 grabAbilityButton.onclick = async function () {
     let contentElements = document.getElementsByClassName('content');
@@ -71,7 +71,12 @@ async function fillAbilityData(abilityName) {
 
     if (docSnap.exists()) {
         const data = docSnap.data();
-        document.getElementById('coaster').innerHTML += `<div class="card">
+        const coaster = document.getElementById('coaster');
+
+        // Create a new card element for each ability
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
             <div class="cardHeader">
                 <h3>${abilityName}</h3>
             </div>
@@ -80,18 +85,18 @@ async function fillAbilityData(abilityName) {
                 <p>Type: ${data.type}</p>
                 <p>Damage Type: ${data.dmgType}</p>
             </div>
-        </div>`;
+        `;
 
-        const cards = document.getElementsByClassName('card');
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].onclick = function () {
-                let contentElements = document.getElementsByClassName('content');
-                for (let i = 0; i < contentElements.length; i++) {
-                    contentElements[i].style.display = "none";
-                }
-                document.getElementById('modal').style.display = 'flex';
-                document.getElementById('abilityList').innerHTML = "";
-                document.getElementById('expandedCard').innerHTML = `<div class="card">
+        // Add an event listener specific to this card
+        card.onclick = function () {
+            let contentElements = document.getElementsByClassName('content');
+            for (let j = 0; j < contentElements.length; j++) {
+                contentElements[j].style.display = "none";
+            }
+            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('abilityList').innerHTML = "";
+            document.getElementById('expandedCard').innerHTML = `
+                <div class="card">
                     <div class="cardHeader">
                         <h3>${abilityName}</h3>
                     </div>
@@ -109,32 +114,34 @@ async function fillAbilityData(abilityName) {
                     <div class="deleteCard">
                         <h2 id="deleteAbility">Remove Ability</h2>
                     </div>
-                </div>`;
+                </div>
+            `;
 
-                // Adding event listener after the element is added to the DOM
-                document.getElementById('deleteAbility').onclick = async function () {
-                    if (confirm('Are you sure you want to remove this ability?')) {
-                        try {
-                            cards[i].remove()
-                            alert('ability removed')
+            document.getElementById('deleteAbility').onclick = async function () {
+                if (confirm('Are you sure you want to remove this ability?')) {
+                    try {
+                        card.remove(); // Remove the specific card
+                        alert('Ability removed');
 
-                            // Clear the UI after deletion
-                            document.getElementById('characterList').innerHTML = "";
-                            document.getElementById('abilityList').innerHTML = "";
-                            document.getElementById('expandedCard').innerHTML = "";
-                            document.getElementById('modal').style.display = 'none'; // Close the modal
+                        // Clear the UI after deletion
+                        document.getElementById('characterList').innerHTML = "";
+                        document.getElementById('abilityList').innerHTML = "";
+                        document.getElementById('expandedCard').innerHTML = "";
+                        document.getElementById('modal').style.display = 'none'; // Close the modal
 
-                            let contentElements = document.getElementsByClassName('content');
-                            for (let i = 0; i < contentElements.length; i++) {
-                                contentElements[i].style.display = "flex"; // Show the main content again
-                            }
-                        } catch (e) {
-                            console.error('Error deleting document: ', e);
+                        let contentElements = document.getElementsByClassName('content');
+                        for (let j = 0; j < contentElements.length; j++) {
+                            contentElements[j].style.display = "flex"; // Show the main content again
                         }
+                    } catch (e) {
+                        console.error('Error deleting document: ', e);
                     }
-                };
+                }
             };
-        }
+        };
+
+        // Append the card to the coaster
+        coaster.appendChild(card);
 
         document.getElementById('modal').style.display = 'none'; // Close the modal after selection
         let contentElements = document.getElementsByClassName('content');
@@ -145,6 +152,8 @@ async function fillAbilityData(abilityName) {
         console.log('No such document!');
     }
 }
+
+
 
 
 //reset data
