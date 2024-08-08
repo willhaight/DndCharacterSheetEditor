@@ -231,6 +231,7 @@ subButt.onclick = async function () {
                 level: level,
                 ac: ac,
                 hp: hp,
+                ogHp: hp,
                 int: int,
                 wis: wis,
                 arcana: arcana,
