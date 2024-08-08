@@ -320,7 +320,7 @@ async function fillCharacterData(charName) {
         document.getElementById("age").value = data.age
         document.getElementById("level").value = data.level
         document.getElementById("ac").value = data.ac
-        document.getElementById("hp").value = data.hp
+        document.getElementById("hp").value = data.ogHp
         document.getElementById("int").value = data.int
         document.getElementById("wis").value = data.wis
         document.getElementById("arcana").value = data.arcana
